@@ -18,17 +18,17 @@ func main() {
 	fmt.Println("Sample 2 - str:", "8 -", sample2Str, "|", sample2Int, "-", sample2IntStr)
 }
 
-func NewMoneyformString(cents int16) string {
+func NewMoneyformString(cents int) string {
 	fullFloated := float32(cents) / 100
 	return fmt.Sprintf("%.2f €", fullFloated)
 }
 
-func NewMoneyformInt(money string) int16 {
+func NewMoneyformInt(money string) int {
 	intVal, err := strconv.Atoi(money)
 
 	if err != nil {
 		panic(err)
 	}
 
-	return int16(intVal)
+	return intVal
 }
