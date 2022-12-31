@@ -3,6 +3,7 @@ package moneyform
 import (
 	"fmt"
 	"strconv"
+	"strings"
 )
 
 func NewMoneyformString(cents int) string {
@@ -11,11 +12,21 @@ func NewMoneyformString(cents int) string {
 }
 
 func NewMoneyformInt(money string) int {
-	intVal, err := strconv.Atoi(money)
+	cMoney := CleanupString(money)
+	intVal, err := strconv.Atoi(cMoney)
 
 	if err != nil {
-		panic(err)
+		return -1
 	}
 
 	return intVal
+}
+
+func CleanupString(money string) string {
+	var tipi = money
+	tipi = strings.ReplaceAll(tipi, "€", "")
+	tipi = strings.ReplaceAll(tipi, ".", "")
+	tipi = strings.ReplaceAll(tipi, ",", "")
+
+	return strings.TrimSpace(tipi)
 }
