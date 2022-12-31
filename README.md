@@ -12,9 +12,11 @@ where both values represents money values. Guess the output of `value`? It is ex
 Obviously this is not the best base to calculate prices, for example.
 
 
-Here comes **Moneyform**. All money values are stored in cents. A formatter in frontend should the ever set the separator at the second-last position, like this: 
+Here comes **Moneyform**. All money values are stored in cents. A formatter in frontend should then ever set the separator at the second-last position, like this: 
 
 - `0,02 €`      for a Moneyform of 2
 - `4,00 €`      for a Moneyform of 400
 - `0,53 €`      for a Moneyform of 53
 - `2208,14 €`   for a Moneyform of 220814
+
+> No `float`s, just `int`s. It's core, for bills
