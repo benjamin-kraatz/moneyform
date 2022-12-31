@@ -8,7 +8,7 @@ Normally you would store money values in `float`s. But based on some calculation
 value := 1143.42 / 99.18
 ```
 
-where both values represents money values. Guess the output of `value`? It is exactly `11.528735632183908`.
+where both values represent money values. Guess the output of `value`? It is exactly `11.528735632183908`.
 Obviously this is not the best base to calculate prices, for example.
 
 
@@ -20,3 +20,6 @@ Here comes **Moneyform**. All money values are stored in cents. A formatter in f
 - `2208,14 €`   for a Moneyform of 220814
 
 > No `float`s, just `int`s. It's core, for bills
+
+____
+100 % code coverage
