@@ -37,7 +37,7 @@ To convert a string like "1411.28 €" into a Moneyform representation, just do
 
 ```go
 money := "1411.28 €"
-cleaned := strings.ReplaceAll(money, "€", "")
+money = strings.ReplaceAll(money, "€", "")
 moneyformInt, err := moneyform.NewMoneyformInt(money)
 
 if err != nil {
