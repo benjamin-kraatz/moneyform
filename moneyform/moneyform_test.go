@@ -1,6 +1,7 @@
 package moneyform_test
 
 import (
+	"strings"
 	"testing"
 
 	"github.com/benjamin-kraatz/moneyform/moneyform"
@@ -27,7 +28,7 @@ func TestIntToString(t *testing.T) {
 		intVal := sample
 		strVal := samplesStr[index]
 
-		actual := moneyform.NewMoneyformString(intVal, "€")
+		actual := moneyform.NewMoneyformString(intVal, " €")
 
 		if strVal != actual {
 			t.Fatal("failed. for", intVal, "expected", strVal, ", got", actual)
@@ -39,6 +40,7 @@ func TestStringToInt(t *testing.T) {
 	for index, sample := range samplesStr {
 		strVal := sample
 		intVal := samplesInt[index]
+		strVal = strings.ReplaceAll(strVal, "€", "")
 
 		actual, _ := moneyform.NewMoneyformInt(strVal)
 
