@@ -36,7 +36,6 @@ func NewMoneyformInt(money string) (int, error) {
 // Note: currency symbols cannot be removed; do this on your own before.
 func CleanupString(money string) string {
 	var clp = money
-	clp = strings.ReplaceAll(clp, "€", "")
 	clp = strings.ReplaceAll(clp, ".", "")
 	clp = strings.ReplaceAll(clp, ",", "")
 
