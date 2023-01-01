@@ -27,7 +27,7 @@ func TestIntToString(t *testing.T) {
 		intVal := sample
 		strVal := samplesStr[index]
 
-		actual := moneyform.NewMoneyformString(intVal)
+		actual := moneyform.NewMoneyformString(intVal, "€")
 
 		if strVal != actual {
 			t.Fatal("failed. for", intVal, "expected", strVal, ", got", actual)
@@ -40,18 +40,18 @@ func TestStringToInt(t *testing.T) {
 		strVal := sample
 		intVal := samplesInt[index]
 
-		actual := moneyform.NewMoneyformInt(strVal)
+		actual, _ := moneyform.NewMoneyformInt(strVal)
 
 		if intVal != actual {
 			t.Fatal("failed. for", strVal, "expected", intVal, ", got", actual)
 		}
 	}
 
-	// test panic case
-	strVal := "0.abc"
-	actual := moneyform.NewMoneyformInt(strVal)
+	// test error case
+	strVal := "ab.c"
+	actual, err := moneyform.NewMoneyformInt(strVal)
 
-	if actual != -1 {
-		t.Fatal("Failed. Expected to 'fail' with -1, got", actual)
+	if err == nil {
+		t.Fatal("Failed. Expected to fail with error, got", actual)
 	}
 }
