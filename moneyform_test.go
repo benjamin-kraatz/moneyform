@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/benjamin-kraatz/moneyform/moneyform"
+	"github.com/benjamin-kraatz/moneyform"
 )
 
 var (
