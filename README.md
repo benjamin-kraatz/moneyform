@@ -2,6 +2,8 @@
 
 Handle loss-free money calculations.
 
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/benjamin-kraatz/moneyform)
+
 Normally you would store money values in `float`s. But based on some calculations, you might have something like this:
 
 ```go
